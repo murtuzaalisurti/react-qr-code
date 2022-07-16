@@ -1,13 +1,24 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+.App {
+  --react-play-theme: #00f2fe;
+  --react-play-bg: #ffffffs;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#qrValue, #download-btn {
+  border: 0.15rem solid var(--react-play-theme);
+  padding: 0.5rem 1rem;
+  background-color: var(--react-play-bg);
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+#download-btn {
+  border-color: #0103262c;
+  background-color: var(--react-play-theme);
+  cursor: pointer;
 }
