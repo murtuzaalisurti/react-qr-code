@@ -2,21 +2,26 @@ import { useState } from "react";
 import QRCode from "react-qr-code";
 import * as htmlToImage from 'html-to-image';
 import download from "downloadjs";
+import { MdDonutLarge } from 'react-icons/md'
 
 function App() {
   const [qrCodeValue, setQrCodeValue] = useState('https://reactplay.io')
+  const [loading, setLoading] = useState(false)
 
   function handleChange(e) {
     setQrCodeValue(e.target.value)
   }
 
   function handleDownload() {
+    setLoading(true)
     htmlToImage.toJpeg(document.querySelector("#qrContain"), {
       quality: 1
     }).then((dataUrl) => {
       download(dataUrl, 'qrcode.jpeg')
+      setLoading(false)
     }).catch((err) => {
       console.log(err)
+      setLoading(false)
     })
   }
 
@@ -26,7 +31,10 @@ function App() {
         <QRCode size={256} value={(qrCodeValue === undefined || qrCodeValue === "") ? 'https://reactplay.io' : qrCodeValue} />
       </div>
       <input id="qrValue" type={'text'} onChange={(e) => handleChange(e)} />
-      <button id="download-btn" onClick={handleDownload}>Download</button>
+      <button id="download-btn" onClick={handleDownload}>
+        Download
+        {loading ? <MdDonutLarge /> : ''}
+      </button>
     </div>
   );
 }

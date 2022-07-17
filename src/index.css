@@ -1,4 +1,3 @@
-
 .App {
   --react-play-theme: #00f2fe;
   --react-play-bg: #ffffffs;
@@ -21,4 +20,22 @@
   border-color: #0103262c;
   background-color: var(--react-play-theme);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1rem;
+}
+
+#download-btn svg {
+  transform: rotate(0);
+  animation: load 1s linear infinite;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
