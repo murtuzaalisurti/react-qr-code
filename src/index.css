@@ -1,6 +1,6 @@
 .App {
   --react-play-theme: #00f2fe;
-  --react-play-bg: #ffffffs;
+  --react-play-bg: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
